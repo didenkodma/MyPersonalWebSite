@@ -1,0 +1,23 @@
+// portfolio section
+.portfolio {
+    grid-column: center-start / center-end;
+    grid-row: 2 / 3;
+}
+
+// about section
+.about {
+    grid-column: center-start / center-end;
+    grid-row: 3 / 4;
+}
+
+// skills section
+.skills {
+    grid-column: center-start / center-end;
+    grid-row: 5 / 6;
+}
+
+// resume section
+.resume {
+    grid-column: center-start / center-end;
+    grid-row: 7 / 8;
+}

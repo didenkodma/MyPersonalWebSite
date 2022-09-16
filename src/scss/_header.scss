@@ -1,0 +1,48 @@
+// header
+.header {
+    grid-column: content-start / content-end;
+    grid-row: 1 / 2;
+    background-image: linear-gradient(to left, rgba($color-primary, .9), rgba($color-primary, .9));
+    position: relative;
+    color: $color-white;
+
+    &__bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+
+    &__video-content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__text-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -70%);
+    }
+
+    &__heading {
+        animation: moveInLeft 2s ease-in;
+    }
+
+    &__text {
+        font-size: 5rem;
+        animation: moveInRight 2s ease-in;
+
+        & span {
+            text-decoration: underline;
+            text-decoration-color: $color-secondary;
+        }
+
+    }
+
+}

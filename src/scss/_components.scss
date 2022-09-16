@@ -1,0 +1,109 @@
+// common btns
+.btn {
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        position: relative;
+        transition: all 0.2s;
+    }
+
+    &:hover {
+        transform: translateY(-.5rem);
+
+        &::after {
+            transform: scale(1.4);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(.3rem);
+    }
+   
+    &--big {
+        margin-top: 3rem;
+        font-size: 4rem;
+        padding: .5rem 3.5rem;
+    }
+
+    &--red {
+        background-color: $color-secondary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-secondary;
+        }
+    }
+
+    &--animated{
+        animation: moveFromBottom 2s linear;
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+     }
+}
+// nav menu btn
+.nav-btn {
+    background-color: transparent;
+    padding: .8rem;
+    border: none;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 50;
+    right: 3rem;
+    top: 3rem;
+    transition: all .2s;
+    cursor: pointer;
+
+    &--active {
+        background-color: $color-secondary;
+    }
+
+    &__icon {
+        position: relative;
+        margin-top: 1.3rem;
+
+        &,
+        &::before,
+        &::after {
+            display: inline-block;
+            width: 3rem;
+            height: 2px;
+            background-color: $color-tertiary-light;
+            transition: all .2s;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        &::before {
+            top: -1rem;
+        }
+
+        &::after {
+            top: 1rem;
+        }
+
+        &--active {
+            background-color: transparent;
+
+            &::before {top:0; transform: rotate(45deg);}
+
+            &::after {top:0; transform: rotate(-45deg);}
+        }
+    }
+}
